@@ -1,4 +1,3 @@
-
 class Node:
 
     def __init__(self, x):
@@ -27,7 +26,7 @@ class Lista:
 
         self.tail.next = node
         node.prev = self.tail
-
+        self.tail = node
 
     def add(self, node):
         """
@@ -47,7 +46,7 @@ class Lista:
     def __str__(self):
         str_aux = '['
         node_aux = self.init
-        while(node_aux is not None):
+        while node_aux is not None:
             str_aux += str(node_aux.x) + ','
             node_aux = node_aux.next
         str_aux += ']'
